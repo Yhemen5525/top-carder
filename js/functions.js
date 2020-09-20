@@ -216,9 +216,17 @@ function checkOut(msg){
   let btnCheckOut = document.getElementById("checkout_btn");
   btnCheckOut.addEventListener("click",()=>{
    // swal("clicked");
+    let chart = JSON.parse(localStorage.getItem("chart"));
+    console.log(chart.length);
+    if(chart.length > 0){
+       // hard coded value. change code to desired output
+       alertMessage("success");
+    }else{
+      swal("You Have An Empty Chart , please.");
+    }
+
   
-   // hard coded value. change code to desired output
-   alertMessage("success");
+  
     window.scrollTo({ top: 0, behavior: 'smooth' });
     
       // //clear chart
