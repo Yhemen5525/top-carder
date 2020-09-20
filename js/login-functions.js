@@ -1,4 +1,4 @@
- // Your web app's Firebase configuration
+// Your web app's Firebase configuration
  var firebaseConfig = {
     apiKey: "AIzaSyCE351TvDwT-6RyudkUjye4sr9ZWoCe5OE",
     authDomain: "top-carder.firebaseapp.com",
@@ -15,14 +15,17 @@
 
   function signIn(){
    
-    let email = document.getElementById("email");
-    let password = document.getElementById("password");
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
 
     
 
-      const promise = auth.signInWithEmailAndPassword(email.value,password.value);
+      const promise = auth.signInWithEmailAndPassword(email,password);
       signInAlert(`<img src="pics/loading.gif" >`);
-      promise.then(()=>{location.replace("buy-card.html")}).catch(e => signInAlert(e.message));  
+      promise.then(function(){
+        localStorage.setItem("carderEmail",email);
+        location.replace("buy-card.html")
+      }).catch(e => signInAlert(e.message));  
       ;
       localStorage.setItem("isUserSignedIn","yes");
   }
@@ -38,6 +41,7 @@
       console.error('Sign Out Error', error);
     });
 
+    localStorage.removeItem("carderEmail");
     localStorage.setItem("isUserSignedIn","no");
     
     //alert("signed Out");
@@ -58,16 +62,38 @@
   
 
    function signUp(){
-      
+    
+    
+
     let email = document.getElementById("email");
     let password = document.getElementById("password");
 
 
-      const promise = auth.createUserWithEmailAndPassword(email.value,password.value);
-      registerAlert(`<img src="pics/loading.gif" >`);
-      promise.then(function (){registerAlert("Thanks for signing up. head on to sign in")}).catch(e => registerAlert(e.message));  
-     // alert("Signed Up");
+    if (comparePassword()){
+        const promise = auth.createUserWithEmailAndPassword(email.value,comparePassword());
+        registerAlert(`<img src="pics/loading.gif" >`);
+        promise.then(function (){
+          registerAlert("Thanks for signing up. head on to sign in");
+      }).catch(e => registerAlert(e.message));  
+      // alert("Signed Up");
+    }
+
+     
+
   } 
+
+  function comparePassword(){
+    let password = document.getElementById("password").value;
+    let confirm_password = document.getElementById("confirm_password").value;
+  
+    if ( password === confirm_password){
+        return password;
+    }else{
+      registerAlert("Password don't match");
+    }
+  
+  }
+
 
    function ifNotSignInRedirect(){
     let isUserSignedIn = localStorage.getItem("isUserSignedIn");

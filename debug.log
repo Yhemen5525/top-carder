@@ -50,3 +50,13 @@
 [0920/211507.845:ERROR:crash_report_database_win.cc(469)] failed to stat report
 [0920/212007.847:ERROR:crash_report_database_win.cc(469)] failed to stat report
 [0920/212852.399:ERROR:crash_report_database_win.cc(469)] failed to stat report
+<<<<<<< HEAD
+=======
+[0920/213507.849:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0920/215007.851:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0920/220507.853:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0920/222007.854:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0920/223507.858:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0920/225007.858:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0920/230507.861:ERROR:crash_report_database_win.cc(469)] failed to stat report
+>>>>>>> fixChart

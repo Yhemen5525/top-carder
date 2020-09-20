@@ -15,6 +15,7 @@
 <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
 
+
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/datatables.min.css">
@@ -52,8 +53,17 @@
 							  <span class="input-group-text">Password</span>
 							</div>
 							<input type="password" id="password" class="form-control">
+							
 		
-						  </div>
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+							  <span class="input-group-text">Confirm Password</span>
+							</div>
+							<input type="password" id="confirm_password" class="form-control">
+							
+		
+						</div>
 		
 						  <input value="Register" type="button" class="btn btn-light text-light text-center  m-3" onclick="signUp();" style="background-color: #34495E;">
 						  

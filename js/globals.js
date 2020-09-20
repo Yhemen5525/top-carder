@@ -22005,6 +22005,31 @@
       }
     ];
 
+    /** 
+    // modified card is an original card to scm
+    let card = {
+      "data": {
+        "card": {
+          "network": "Mastercard",
+          "number": "2706 8281 0241 0005",
+          "cvv": 655,
+          "pin": 7244,
+          "balance": "$900",
+          "expirationMonth": 7,
+          "expirationYear": "2025",
+          "price": 14.94,
+          "id": 0
+        },
+        "customer": {
+          "name": "Kofi Mensah",
+          "address": "South Street 9949",
+          "country": "Benin"
+        }
+      }
+    }
+    cardObjects.push(card);
+
+    **/
       localStorage.setItem("cardObjects",JSON.stringify(cardObjects));
 
   })();
