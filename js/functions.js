@@ -10,6 +10,7 @@ function renderBuyCardTable(){
 
   
   let table = $('#myTable').DataTable({
+    pageLength: 25,
     data: cardObjects,
     columns: [
       {data: "data.card.network"},
