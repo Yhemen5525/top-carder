@@ -1,4 +1,8 @@
 showWalletAmount();
+function displayUserEmail(){
+    $("#carder_email").html(`${localStorage.getItem("carderEmail")}`);
+}
+displayUserEmail();
 
 let chart = JSON.parse(localStorage.getItem("chart"));
 let purchasedCards = JSON.parse(localStorage.getItem("purchasedCards"));
